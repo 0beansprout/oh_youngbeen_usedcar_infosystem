@@ -1,0 +1,35 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Maintenance List
+{% endblock %}
+
+{% block create_button %}
+    {% if perms.usedcarinfo.add_maintenance %}
+        <a
+                href="{% url 'usedcarinfo_maintenance_create_urlpattern' %}"
+                class="button button-primary">
+            Create New Maintenance</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>Maintenance List</h2>
+    {% if perms.usedcarinfo.add_maintenance %}
+        <div>
+          <a href="{% url 'usedcarinfo_maintenance_create_urlpattern' %}"
+          class="button button-primary">
+            Create New Maintenance</a>
+        </div>
+    {% endif %}
+
+    <ul>
+        {% for maintenance in maintenance_list %}
+            <li>
+                <a href="{{ maintenance.get_absolute_url }}">{{ maintenance }}</a>
+            </li>
+        {% empty %}
+            <li><em>There are currently no maintenances available.</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

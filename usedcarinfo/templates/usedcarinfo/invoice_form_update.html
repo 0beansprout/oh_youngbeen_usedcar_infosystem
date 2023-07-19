@@ -1,0 +1,15 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Update Invoice
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{{ invoice.get_update_url }}"
+        method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button button-primary">Update Invoice</button>
+    </form>
+{% endblock %}

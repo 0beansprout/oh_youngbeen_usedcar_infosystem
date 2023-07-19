@@ -1,0 +1,15 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Create Dealer
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{% url 'usedcarinfo_dealer_create_urlpattern'%}"
+        method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button button-primary">Create Dealer</button>
+    </form>
+{% endblock %}

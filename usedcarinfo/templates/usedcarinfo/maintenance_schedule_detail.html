@@ -1,0 +1,36 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Maintenance Schedule - {{ maintenance_schedule }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ maintenance_schedule }}</h2>
+    <ul class="ezu-button-list">
+        {% if perms.usedcarinfo.change_maintenance_schedule %}
+        <li>
+          <a href="{{ maintenance_schedule.get_update_url }}"
+           class="button button-primary">
+            Edit Schedule</a></li>
+        {% endif %}
+        {% if perms.usedcarinfo.delete_maintenance_schedule %}
+        <li>
+          <a href="{{ maintenance_schedule.get_delete_url }}"
+           class="button button-primary">
+            Delete Schedule</a></li>
+        {% endif %}
+
+    </ul>
+    <section>
+        <h3>Maintenances</h3>
+        <ul>
+            {% for maintenance in maintenance_list %}
+                <li>
+                    <a href="{{ maintenance.get_absolute_url }}">{{ maintenance }}</a>
+                </li>
+            {% empty %}
+                <li><em>There are currently no maintenances for this schedule.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

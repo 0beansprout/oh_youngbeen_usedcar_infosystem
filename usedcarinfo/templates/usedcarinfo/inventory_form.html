@@ -1,0 +1,15 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Create Inventory
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{% url 'usedcarinfo_inventory_create_urlpattern'%}"
+        method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button button-primary">Create Inventory</button>
+    </form>
+{% endblock %}

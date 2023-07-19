@@ -1,0 +1,35 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Maintenance Schedule List
+{% endblock %}
+
+{% block create_button %}
+    {% if perms.usedcarinfo.add_maintenance_schedule %}
+        <a
+                href="{% url 'usedcarinfo_maintenance_schedule_create_urlpattern' %}"
+                class="button button-primary">
+            Create New Schedule</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>Maintenance Schedule List</h2>
+    {% if perms.usedcarinfo.add_maintenance_schedule %}
+        <div>
+          <a href="{% url 'usedcarinfo_maintenance_schedule_create_urlpattern' %}"
+          class="button button-primary">
+            Create New Schedule</a>
+        </div>
+    {% endif %}
+
+    <ul>
+        {% for maintenance_schedule in maintenance_schedule_list %}
+            <li>
+                <a href="{{ maintenance_schedule.get_absolute_url }}">{{ maintenance_schedule }}</a>
+            </li>
+        {% empty %}
+            <li><em>There are currently no maintenance schedules available.</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

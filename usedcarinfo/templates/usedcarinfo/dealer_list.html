@@ -1,0 +1,35 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Dealer List
+{% endblock %}
+
+{% block create_button %}
+    {% if perms.usedcarinfo.add_dealer %}
+        <a
+                href="{% url 'usedcarinfo_dealer_create_urlpattern' %}"
+                class="button button-primary">
+            Create New Dealer</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>Dealer List</h2>
+    {% if perms.usedcarinfo.add_dealer %}
+        <div>
+          <a href="{% url 'usedcarinfo_dealer_create_urlpattern' %}"
+          class="button button-primary">
+            Create New Dealer</a>
+        </div>
+    {% endif %}
+
+    <ul>
+        {% for dealer in dealer_list %}
+            <li>
+                <a href="{{ dealer.get_absolute_url }}">{{ dealer }}</a>
+            </li>
+        {% empty %}
+            <li><em>There are currently no dealers available.</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

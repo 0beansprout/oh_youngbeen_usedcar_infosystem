@@ -1,0 +1,35 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Auto Part List
+{% endblock %}
+
+{% block create_button %}
+    {% if perms.usedcarinfo.add_auto_part %}
+        <a
+                href="{% url 'usedcarinfo_auto_part_create_urlpattern' %}"
+                class="button button-primary">
+            Create New Auto Part</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>Auto Part List</h2>
+    {% if perms.usedcarinfo.add_auto_part %}
+        <div>
+          <a href="{% url 'usedcarinfo_auto_part_create_urlpattern' %}"
+          class="button button-primary">
+            Create New Auto Part</a>
+        </div>
+    {% endif %}
+
+    <ul>
+        {% for auto_part in auto_part_list %}
+            <li>
+                <a href="{{ auto_part.get_absolute_url }}">{{ auto_part }}</a>
+            </li>
+        {% empty %}
+            <li><em>There are currently no auto parts available.</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

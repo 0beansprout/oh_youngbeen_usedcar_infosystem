@@ -1,0 +1,36 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Technician List
+{% endblock %}
+
+{% block create_button %}
+    {% if perms.usedcarinfo.add_technician %}
+        <a
+                href="{% url 'usedcarinfo_technician_create_urlpattern' %}"
+                class="button button-primary">
+            Create New Technician</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>Technician List</h2>
+    {% if perms.usedcarinfo.add_technician %}
+
+        <div>
+          <a href="{% url 'usedcarinfo_technician_create_urlpattern' %}"
+          class="button button-primary">
+            Create New Technician</a>
+        </div>
+    {% endif %}
+
+    <ul>
+        {% for technician in technician_list %}
+            <li>
+                <a href="{{ technician.get_absolute_url }}">{{ technician }}</a>
+            </li>
+        {% empty %}
+            <li><em>There are currently no technicians available.</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

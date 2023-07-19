@@ -1,0 +1,26 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Error Deleting Technician
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h2>Error Deleting Technician</h2>
+        <p>
+            You may not delete technician {{ technician }}.  This
+            technician is currently assigned to the following
+            maintenances:
+        </p>
+
+        <ul>
+            {% for maintenance in maintenance %}
+            <li><a href="{{ maintenance.get_absolute_url }}">{{ maintenance }}</a></li>
+            {%  endfor %}
+        </ul>
+
+        <p>
+            Return to <a href="{% url 'usedcarinfo_technician_list_urlpattern' %}">Technician List</a>.
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Error Deleting Dealer
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h2>Error Deleting Dealer</h2>
+        <p>
+            You may not delete dealer {{ dealer }}.  This
+            dealer is currently registered in the following
+            inventories:
+        </p>
+
+        <ul>
+            {% for inventory in inventory %}
+            <li><a href="{{ inventory.get_absolute_url }}">{{ inventory.dealer }}</a></li>
+            {%  endfor %}
+        </ul>
+
+        <p>
+            Return to <a href="{% url 'usedcarinfo_dealer_list_urlpattern' %}">Student List</a>.
+        </p>
+    </div>
+{% endblock %}

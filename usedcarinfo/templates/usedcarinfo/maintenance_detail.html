@@ -1,0 +1,60 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Maintenance - {{ maintenance }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ maintenance }}</h2>
+    <ul class="ezu-button-list">
+        {% if perms.usedcarinfo.change_maintenance %}
+        <li>
+          <a href="{{ maintenance.get_update_url }}"
+           class="button button-primary">
+            Edit Maintenance</a></li>
+        {% endif %}
+        {% if perms.usedcarinfo.delete_maintenance %}
+        <li>
+          <a href="{{ maintenance.get_delete_url }}"
+           class="button button-primary">
+            Delete Maintenance</a></li>
+        {% endif %}
+
+    </ul>
+
+    <section>
+        <table>
+            <tr>
+                <th>Auto Part:</th>
+                <td><a href="{{ auto_part.get_absolute_url }}">{{ auto_part }}</a></td>
+            </tr>
+            <tr>
+                <th>Maintenance Name:</th>
+                <td>{{ maintenance.maintenance_name }}</td>
+            </tr>
+            <tr>
+                <th>Schedule:</th>
+                <td><a href="{{ maintenance_schedule.get_absolute_url }}">{{ maintenance_schedule }}</a></td>
+            </tr>
+
+            <tr>
+                <th>Technicians:</th>
+                <td><a href="{{ technician.get_absolute_url }}">{{ technician }}</a></td>
+            </tr>
+        </table>
+
+    </section>
+
+    <section>
+        <h3>Inventories</h3>
+        <ul>
+            {% for inventory in inventory_list %}
+                <li>
+                    <a href="{{ inventory.get_absolute_url }}">{{ inventory.car_name }}</a>
+                </li>
+            {% empty %}
+                <li><em>There are currently no cars registered for this maintenances.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

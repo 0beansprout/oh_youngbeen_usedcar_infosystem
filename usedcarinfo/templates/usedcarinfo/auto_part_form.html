@@ -1,0 +1,15 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Create Auto Part
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{% url 'usedcarinfo_auto_part_create_urlpattern'%}"
+        method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button button-primary">Create Auto Part</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Invoice List
+{% endblock %}
+
+{% block create_button %}
+    {% if perms.usedcarinfo.add_invoice %}
+        <a
+                href="{% url 'usedcarinfo_invoice_create_urlpattern' %}"
+                class="button button-primary">
+            Create New Invoice</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>Invoice List</h2>
+    {% if perms.usedcarinfo.add_invoice %}
+        <div>
+          <a href="{% url 'usedcarinfo_invoice_create_urlpattern' %}"
+          class="button button-primary">
+            Create New Invoice</a>
+        </div>
+    {% endif %}
+
+    <ul>
+        {% for invoice in invoice_list %}
+            <li>
+                <a href="{{ invoice.get_absolute_url }}">{{ invoice }}</a>
+            </li>
+        {% empty %}
+            <li><em>There are currently no invoices available.</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

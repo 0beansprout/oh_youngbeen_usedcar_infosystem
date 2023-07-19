@@ -1,0 +1,49 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Auto part - {{ auto_part }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ auto_part }}</h2>
+    <ul class="ezu-button-list">
+        {% if perms.usedcarinfo.change_auto_part %}
+        <li>
+          <a href="{{ auto_part.get_update_url }}"
+           class="button button-primary">
+            Edit Auto Part</a></li>
+        {% endif %}
+        {% if perms.usedcarinfo.delete_auto_part %}
+        <li>
+          <a href="{{ auto_part.get_delete_url }}"
+           class="button button-primary">
+            Delete Auto Part</a></li>
+        {% endif %}
+
+    </ul>
+    <section>
+        <table>
+            <tr>
+                <th>Auto Part Number:</th>
+                <td>{{ auto_part.auto_part_number }}</td>
+            </tr>
+            <tr>
+                <th>Auto Part Name:</th>
+                <td>{{ auto_part.auto_part_name }}</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h3>Maintenances</h3>
+        <ul>
+            {% for maintenance in maintenance_list %}
+                <li>
+                    <a href="{{ maintenance.get_absolute_url }}">{{ maintenance }}</a>
+                </li>
+            {% empty %}
+                <li><em>There are currently no maintenances for this Auto Part.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

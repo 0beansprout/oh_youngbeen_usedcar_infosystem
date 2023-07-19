@@ -1,0 +1,15 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Update Auto Part
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{{ auto_part.get_update_url }}"
+        method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="button button-primary">Update Auto Part</button>
+    </form>
+{% endblock %}

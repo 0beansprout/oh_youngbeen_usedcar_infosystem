@@ -1,0 +1,20 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Delete Maintenance
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{{ maintenance.get_delete_url }}"
+        method="post">
+        {% csrf_token %}
+        <p>
+            Are you sure that you want to delete
+            maintenance {{ maintenance }}?
+        </p>
+        <a href="{{ maintenance.get_absolute_url }}"
+         class="button button-primary">Cancel</a>
+        <button type="submit" class="button button-primary">Delete Maintenance</button>
+    </form>
+{% endblock %}

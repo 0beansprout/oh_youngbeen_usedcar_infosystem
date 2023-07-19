@@ -1,0 +1,56 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Inventory - {{ inventory }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ inventory }}</h2>
+    <ul class="ezu-button-list">
+        {% if perms.usedcarinfo.change_inventory %}
+        <li>
+          <a href="{{ inventory.get_update_url }}"
+           class="button button-primary">
+            Edit Inventory</a></li>
+        {% endif %}
+        {% if perms.usedcarinfo.delete_inventory %}
+        <li>
+          <a href="{{ inventory.get_delete_url }}"
+           class="button button-primary">
+            Delete Inventory</a></li>
+        {% endif %}
+
+    </ul>
+
+    <section>
+        <table>
+            <tr>
+                <th>Maintenance:</th>
+                <td><a href="{{ maintenance.get_absolute_url }}">{{ maintenance }}</a></td>
+            </tr>
+            <tr>
+                <th>Car Name:</th>
+                <td>{{ inventory.car_name }}</td>
+            </tr>
+
+            <tr>
+                <th>Dealer:</th>
+                <td><a href="{{ dealer.get_absolute_url }}">{{ dealer }}</a></td>
+            </tr>
+        </table>
+
+    </section>
+
+    <section>
+        <h3>Invoices from:</h3>
+        <ul>
+            {% for invoice in invoice_list %}
+                <li>
+                    <a href="{{ invoice.get_absolute_url }}">{{ invoice.customer }}</a>
+                </li>
+            {% empty %}
+                <li><em>There are currently no customers registered for this invoice.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

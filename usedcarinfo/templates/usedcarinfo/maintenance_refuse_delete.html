@@ -1,0 +1,26 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Error Deleting Maintenance
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h2>Error Deleting Maintenance</h2>
+        <p>
+            You may not delete maintenance {{ maintenance }}.  This
+            maintenance currently has the following
+            inventories:
+        </p>
+
+        <ul>
+            {% for inventory in inventory %}
+            <li><a href="{{ inventory.get_absolute_url }}">{{ inventory.maintenance }}</a></li>
+            {%  endfor %}
+        </ul>
+
+        <p>
+            Return to <a href="{% url 'usedcarinfo_maintenance_list_urlpattern' %}">Maintenance List</a>.
+        </p>
+    </div>
+{% endblock %}

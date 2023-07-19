@@ -1,0 +1,20 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Delete Auto Part
+{% endblock %}
+
+{% block content %}
+    <form
+        action="{{ auto_part.get_delete_url }}"
+        method="post">
+        {% csrf_token %}
+        <p>
+            Are you sure that you want to delete
+            Auto Part {{ auto_part }}?
+        </p>
+        <a href="{{ auto_part.get_absolute_url }}"
+         class="button button-primary">Cancel</a>
+        <button type="submit" class="button button-primary">Delete Auto Part</button>
+    </form>
+{% endblock %}

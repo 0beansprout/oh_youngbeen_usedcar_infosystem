@@ -1,0 +1,55 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Technician - {{ technician }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ technician }}</h2>
+    <ul class="ezu-button-list">
+        {% if perms.usedcarinfo.change_technician %}
+        <li>
+          <a href="{{ technician.get_update_url }}"
+           class="button button-primary">
+            Edit Technician</a></li>
+        {% endif %}
+        {% if perms.usedcarinfo.delete_technician %}
+        <li>
+          <a href="{{ technician.get_delete_url }}"
+           class="button button-primary">
+            Delete Technician</a></li>
+        {% endif %}
+
+    </ul>
+    <section>
+        <table>
+            <tr>
+                <th>First Name:</th>
+                <td>{{ technician.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last Name:</th>
+                <td>{{ technician.last_name }}</td>
+            </tr>
+            {% if technician.disambiguator %}
+                <tr>
+                    <th>Disambiguator:</th>
+                    <td>{{ technician.disambiguator }}</td>
+                </tr>
+            {% endif %}
+        </table>
+    </section>
+
+    <section>
+        <h3>Maintenances</h3>
+        <ul>
+            {% for maintenance in maintenance_list %}
+                <li>
+                    <a href="{{ maintenance.get_absolute_url }}">{{ maintenance }}</a>
+                </li>
+            {% empty %}
+                <li><em>There are currently no maintenances for this technicians.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

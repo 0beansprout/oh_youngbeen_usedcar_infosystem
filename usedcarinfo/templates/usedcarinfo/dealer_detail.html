@@ -1,0 +1,55 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Dealer - {{ dealer }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ dealer }}</h2>
+    <ul class="ezu-button-list">
+        {% if perms.usedcarinfo.change_dealer %}
+        <li>
+          <a href="{{ dealer.get_update_url }}"
+           class="button button-primary">
+            Edit Dealer</a></li>
+        {% endif %}
+        {% if perms.usedcarinfo.delete_dealer %}
+        <li>
+          <a href="{{ dealer.get_delete_url }}"
+           class="button button-primary">
+            Delete Dealer</a></li>
+        {% endif %}
+
+    </ul>
+    <section>
+        <table>
+            <tr>
+                <th>First Name:</th>
+                <td>{{ dealer.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last Name:</th>
+                <td>{{ dealer.last_name }}</td>
+            </tr>
+            {% if dealer.disambiguator %}
+                <tr>
+                    <th>Disambiguator:</th>
+                    <td>{{ dealer.disambiguator }}</td>
+                </tr>
+            {% endif %}
+        </table>
+    </section>
+
+    <section>
+        <h3>Inventories</h3>
+        <ul>
+            {% for inventory in inventory_list %}
+                <li>
+                    <a href="{{ inventory.get_absolute_url }}">{{ inventory.car_name }}</a>
+                </li>
+            {% empty %}
+                <li><em>This dealer is not currently registered for any inventories.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

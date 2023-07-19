@@ -1,0 +1,38 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Invoice - {{ invoice }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ invoice }}</h2>
+    <ul class="ezu-button-list">
+        {% if perms.usedcarinfo.change_invoice %}
+        <li>
+          <a href="{{ invoice.get_update_url }}"
+           class="button button-primary">
+            Edit Invoice</a></li>
+        {% endif %}
+        {% if perms.usedcarinfo.delete_invoice %}
+        <li>
+          <a href="{{ invoice.get_delete_url }}"
+           class="button button-primary">
+            Delete Invoice</a></li>
+        {% endif %}
+
+    </ul>
+
+    <section>
+        <table>
+            <tr>
+                <th>Customer:</th>
+                <td><a href="{{ customer.get_absolute_url }}">{{ customer }}</a></td>
+            </tr>
+            <tr>
+                <th>Inventory:</th>
+                <td><a href="{{ inventory.get_absolute_url }}">{{ inventory }}</a></td>
+            </tr>
+        </table>
+    </section>
+
+{% endblock %}

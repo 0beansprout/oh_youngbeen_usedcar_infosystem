@@ -1,0 +1,26 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Error Deleting Inventory
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h2>Error Deleting Inventory</h2>
+        <p>
+            You may not delete inventory {{ inventory }}.  This
+            inventory currently has the following
+            invoices:
+        </p>
+
+        <ul>
+            {% for invoice in invoice %}
+            <li><a href="{{ invoice.get_absolute_url }}">{{ invoice.customer }}</a></li>
+            {%  endfor %}
+        </ul>
+
+        <p>
+            Return to <a href="{% url 'usedcarinfo_inventory_list_urlpattern' %}">Instructor List</a>.
+        </p>
+    </div>
+{% endblock %}

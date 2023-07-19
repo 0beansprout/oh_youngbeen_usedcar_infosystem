@@ -1,0 +1,35 @@
+{% extends 'usedcarinfo/base.html' %}
+
+{% block title %}
+    Inventory List
+{% endblock %}
+
+{% block create_button %}
+    {% if perms.usedcarinfo.add_inventory %}
+        <a
+                href="{% url 'usedcarinfo_inventory_create_urlpattern' %}"
+                class="button button-primary">
+            Create New Inventory</a>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>Inventory List</h2>
+    {% if perms.usedcarinfo.add_inventory %}
+        <div>
+          <a href="{% url 'usedcarinfo_inventory_create_urlpattern' %}"
+          class="button button-primary">
+            Create New Inventories</a>
+        </div>
+    {% endif %}
+
+    <ul>
+        {% for inventory in inventory_list %}
+            <li>
+                <a href="{{ inventory.get_absolute_url }}">{{ inventory }}</a>
+            </li>
+        {% empty %}
+            <li><em>There are currently no inventories available.</em></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
