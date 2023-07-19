@@ -24,7 +24,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <!-- <a href="https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem">
+  <!-- <a href="https://github.com/0beansprout/oh_youngbeen_usedcar_infosystem">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
@@ -33,14 +33,14 @@
   <p align="center">
     Web Development using Django App Frameworks
     <br />
-    <a href="https://wowchemy.com/?utm_campaign=poweredby"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/0beansprout/oh_youngbeen_usedcar_infosystem"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://youngbeenblog.netlify.app/">View Demo</a>
+    <a href="">View Demo</a>
     ·
-    <a href="https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem/issues">Report Bug</a>
+    <a href="https://github.com/0beansprout/oh_youngbeen_usedcar_infosystem/issues">Report Bug</a>
     ·
-    <a href="https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem/issues">Request Feature</a>
+    <a href="https://github.com/0beansprout/oh_youngbeen_usedcar_infosystem/issues">Request Feature</a>
   </p>
 </div>
 
@@ -105,8 +105,8 @@ The project aimed to utilize the Django App Framework to design, code, and test 
 
 <!-- GETTING STARTED -->
 ## Getting
-
-If you want to demonstrate this website, you can find more information [here](https://usedcarmgmt.netlify.app/).
+<!--
+If you want to demonstrate this website, you can find more information [here](https://usedcarmgmt.netlify.app/).-->
 
 The level of information accessibility for each user and group is determined by their respective authorization and authentication credentials. Please consult the table provided below to obtain further details regarding permissions.
 
