@@ -24,7 +24,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <!-- <a href="https://github.com/0beansprout/usedcar_infosystem">
+  <!-- <a href="https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
@@ -38,9 +38,9 @@
     <br />
     <a href="https://youngbeenblog.netlify.app/">View Demo</a>
     ·
-    <a href="https://github.com/0beansprout/usedcar_infosystem/issues">Report Bug</a>
+    <a href="https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem/issues">Report Bug</a>
     ·
-    <a href="https://github.com/0beansprout/usedcar_infosystem/issues">Request Feature</a>
+    <a href="https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem/issues">Request Feature</a>
   </p>
 </div>
 
@@ -211,7 +211,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Youngbeen Oh - [@0beansprout](https://linkedin.com/in/youngbeen-oh) - oyb7140@gmail.com
 
-Project Link: [https://github.com/0beansprout/usedcar_infosystem](https://github.com/0beansprout/usedcar_infosystem)
+Project Link: [https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem](https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem)
 
 
 
@@ -240,13 +240,13 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/0beansprout/usedcar_infosystem.svg?style=for-the-badge
-[contributors-url]: https://github.com/0beansprout/usedcar_infosystem/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/0beansprout/usedcar_infosystem.svg?style=for-the-badge
-[forks-url]: https://github.com/0beansprout/usedcar_infosystem/network/members
-[stars-shield]: https://img.shields.io/github/stars/0beansprout/usedcar_infosystem.svg?style=for-the-badge
-[stars-url]: https://github.com/0beansprout/usedcar_infosystem/stargazers
-[issues-shield]: https://img.shields.io/github/issues/0beansprout/usedcar_infosystem.svg?style=for-the-badge
-[issues-url]: https://github.com/0beansprout/usedcar_infosystem/issues
+[contributors-url]: https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/0beansprout/oh_yougnbeen_usedcar_infosystem.svg?style=for-the-badge
+[forks-url]: https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem/network/members
+[stars-shield]: https://img.shields.io/github/stars/0beansprout/oh_yougnbeen_usedcar_infosystem.svg?style=for-the-badge
+[stars-url]: https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem/stargazers
+[issues-shield]: https://img.shields.io/github/issues/0beansprout/oh_yougnbeen_usedcar_infosystem.svg?style=for-the-badge
+[issues-url]: https://github.com/0beansprout/oh_yougnbeen_usedcar_infosystem/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
